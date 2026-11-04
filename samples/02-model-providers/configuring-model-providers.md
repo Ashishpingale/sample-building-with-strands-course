@@ -38,6 +38,16 @@ openai_model = OpenAIModel(
     params={"max_tokens": 1000, "temperature": 0.7},
 )
 
+# OpenRouter (OpenAI-compatible)
+openrouter_model = OpenAIModel(
+    client_args={
+        "api_key": os.environ["OPENROUTER_API_KEY"],
+        "base_url": "https://openrouter.ai/api/v1",
+    },
+    model_id="openai/gpt-4o-mini",
+    params={"max_tokens": 1000, "temperature": 0.7},
+)
+
 # Local with Ollama (no cloud APIs needed)
 ollama_model = OllamaModel(
     host="http://localhost:11434",
